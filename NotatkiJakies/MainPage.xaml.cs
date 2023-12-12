@@ -38,7 +38,11 @@ namespace NotatkiJakies
 
         private void Delete_Clicked(object sender, EventArgs e)
         {
-
+            NoteModel selected= NoteListXAML.SelectedItem as NoteModel;
+            if(selected != null)
+            {
+                noteList.Remove(selected);
+            }
         }
 
         private void Edit_Clicked(object sender, EventArgs e)
