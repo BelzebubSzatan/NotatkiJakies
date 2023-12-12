@@ -45,9 +45,11 @@ namespace NotatkiJakies
             }
         }
 
-        private void Edit_Clicked(object sender, EventArgs e)
+        private async void Edit_Clicked(object sender, EventArgs e)
         {
-
+            if(NoteListXAML.SelectedItem is NoteModel model){
+                await Navigation.PushAsync(new AddEditPage(noteList,model));
+            }
         }
     }
 }
