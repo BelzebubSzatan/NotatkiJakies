@@ -33,7 +33,7 @@ namespace NotatkiJakies
 
         private void Add_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new AddEditPage(noteList));
         }
 
         private void Delete_Clicked(object sender, EventArgs e)
