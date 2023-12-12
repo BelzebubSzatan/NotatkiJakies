@@ -16,21 +16,8 @@ namespace NotatkiJakies
         public MainPage()
         {
             InitializeComponent();
-            noteList.Add(new NoteModel()
-            {
-                ID=Guid.NewGuid(),
-                Title="cos1",
-                Description="opis1",
-            });
-            noteList.Add(new NoteModel()
-            {
-                ID = Guid.NewGuid(),
-                Title = "cos2",
-                Description = "opis2",
-            });
             NoteListXAML.ItemsSource=noteList;
         }
-
         private void Add_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddEditPage(noteList));
@@ -45,9 +32,11 @@ namespace NotatkiJakies
             }
         }
 
-        private void Edit_Clicked(object sender, EventArgs e)
+        private async void Edit_Clicked(object sender, EventArgs e)
         {
-
+            if(NoteListXAML.SelectedItem is  NoteModel model) {
+                await Navigation.PushAsync(new AddEditPage(noteList,model));
+            }
         }
     }
 }

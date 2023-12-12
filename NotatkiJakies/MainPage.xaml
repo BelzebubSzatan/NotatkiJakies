@@ -13,7 +13,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="{Binding Title}" />
+                        <Label Text="{Binding Description}" />
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
